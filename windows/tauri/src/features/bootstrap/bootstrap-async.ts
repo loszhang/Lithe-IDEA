@@ -10,6 +10,15 @@ const asyncBootstrapSteps = [
     },
   },
   {
+    name: "user keybindings file",
+    run: async () => {
+      const { applyUserKeybindingsFile } = await import(
+        "@/features/keymaps/services/keybindings-file"
+      );
+      await applyUserKeybindingsFile();
+    },
+  },
+  {
     name: "theme system",
     run: async () => {
       const { initializeThemeSystem } = await import("@/extensions/themes/theme-initializer");
